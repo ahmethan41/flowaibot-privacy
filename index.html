@@ -1,138 +1,103 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Everything Flow &mdash; Gizlilik Politikasi / Privacy Policy</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f0f1a; color: #e0e0e0; line-height: 1.7; padding: 40px 20px; }
-        .container { max-width: 720px; margin: 0 auto; }
-        h1 { font-size: 24px; color: #a78bfa; margin-bottom: 8px; }
-        .subtitle { color: #888; font-size: 14px; margin-bottom: 32px; }
-        h2 { font-size: 18px; color: #c4b5fd; margin-top: 28px; margin-bottom: 12px; }
-        p { margin-bottom: 14px; font-size: 15px; color: #ccc; }
-        .highlight { background: #1e1b4b; border-left: 3px solid #7c3aed; padding: 14px 18px; border-radius: 8px; margin: 16px 0; }
-        .highlight p { margin-bottom: 0; }
-        .lang-switch { text-align: right; margin-bottom: 20px; }
-        .lang-switch button { background: #7c3aed; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
-        .lang-switch button:hover { background: #6d28d9; }
-        .section { display: none; }
-        .section.active { display: block; }
-        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; text-align: center; color: #666; font-size: 13px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Everything Flow — Chrome Extension for Google Flow AI</title>
+  <meta name="description" content="Automate image generation and bulk downloading on Google Flow AI. Save hours with batch prompts, smart scanning, and one-click downloads.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #0f0f14; color: #e2e8f0; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 24px; background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 70%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+    .hero-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 40px; box-shadow: 0 8px 32px rgba(124,58,237,0.4); margin-bottom: 28px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 12px; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero .subtitle { font-size: clamp(1rem, 2.5vw, 1.25rem); color: #94a3b8; max-width: 600px; margin-bottom: 36px; }
+    .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
+    .hero-badge { padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; background: rgba(124,58,237,0.15); color: #a78bfa; border: 1px solid rgba(124,58,237,0.25); }
+    .cta-group { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn { padding: 14px 32px; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary { background: linear-gradient(135deg, #7c3aed, #a78bfa); color: #fff; box-shadow: 0 4px 20px rgba(124,58,237,0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(124,58,237,0.5); }
+    .btn-outline { background: transparent; color: #a78bfa; border: 2px solid rgba(124,58,237,0.4); }
+    .btn-outline:hover { background: rgba(124,58,237,0.1); border-color: #a78bfa; }
+    section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-title { text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .section-sub { text-align: center; color: #94a3b8; font-size: 16px; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .feature-card { background: #1a1a24; border: 1px solid #2d2d3a; border-radius: 16px; padding: 28px; transition: all 0.3s; }
+    .feature-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .feature-icon { width: 48px; height: 48px; background: rgba(124,58,237,0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { color: #94a3b8; font-size: 14px; line-height: 1.6; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .step { text-align: center; padding: 24px; }
+    .step-num { width: 48px; height: 48px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #fff; margin: 0 auto 16px; box-shadow: 0 4px 16px rgba(124,58,237,0.3); }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: #94a3b8; font-size: 13px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 700px; margin: 0 auto; }
+    .price-card { background: #1a1a24; border: 1px solid #2d2d3a; border-radius: 16px; padding: 32px; text-align: center; position: relative; }
+    .price-card.pro { border-color: #7c3aed; box-shadow: 0 0 40px rgba(124,58,237,0.15); }
+    .price-card.pro::before { content: 'POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #7c3aed, #a78bfa); color: #fff; font-size: 10px; font-weight: 800; padding: 4px 16px; border-radius: 20px; letter-spacing: 1px; }
+    .price-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .price-amount { font-size: 40px; font-weight: 900; margin: 16px 0 4px; }
+    .price-amount span { font-size: 16px; font-weight: 500; color: #94a3b8; }
+    .price-period { color: #94a3b8; font-size: 13px; margin-bottom: 24px; }
+    .price-features { list-style: none; text-align: left; margin-bottom: 24px; }
+    .price-features li { padding: 8px 0; font-size: 14px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .price-features li::before { content: '\2713'; color: #10b981; font-weight: 700; font-size: 14px; }
+    .price-btn { display: block; width: 100%; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s; }
+    .price-btn.free { background: rgba(255,255,255,0.06); color: #e2e8f0; border: 1px solid #2d2d3a; }
+    .price-btn.pro { background: linear-gradient(135deg, #7c3aed, #a78bfa); color: #fff; box-shadow: 0 4px 16px rgba(124,58,237,0.3); }
+    .price-btn:hover { transform: translateY(-2px); }
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid #2d2d3a; color: #64748b; font-size: 13px; }
+    footer a { color: #a78bfa; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .hero { padding: 40px 16px; } section { padding: 50px 16px; } .features-grid { grid-template-columns: 1fr; } .pricing-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="lang-switch">
-            <button onclick="switchLang('tr')">Turkce</button>
-            <button onclick="switchLang('en')">English</button>
-        </div>
-
-        <!-- TURKCE -->
-        <div id="tr" class="section active">
-            <h1>Auto Everything Flow &mdash; Gizlilik Politikasi</h1>
-            <p class="subtitle">Son guncelleme: Mart 2026</p>
-
-            <h2>1. Genel Bakis</h2>
-            <p>Auto Everything Flow, Google Flow AI (labs.google) uzerinde prompt olusturma ve gorsel indirme islemlerini kolaylastiran bir Chrome eklentisidir. Kullanici gizliligine onem veriyoruz ve bu politika, verilerinizin nasil islendigi hakkinda sizi bilgilendirmek amaciyla hazirlanmistir.</p>
-
-            <h2>2. Toplanan Veriler</h2>
-            <div class="highlight">
-                <p>Auto Everything Flow hicbir kisisel veriyi kendi sunucularina gondermez.</p>
-            </div>
-            <p>Eklenti asagidaki verileri cihazinizda depolar (Chrome local storage):</p>
-            <p>- Kullanici tarafindan girilen prompt listeleri ve karakter isimleri</p>
-            <p>- Eklenti ayarlari (dil, hiz, mod tercihleri)</p>
-            <p>- Toplam indirme ve oturum istatistikleri</p>
-            <p>- Abonelik durumu (Pro/Free)</p>
-            <p>Ayrica gunluk kullanim sayaci (uretim ve indirme limitleri) Chrome sync storage uzerinden Google hesabinizla senkronize edilir. Bu veri Google'in altyapisinda saklanir ve cihazlar arasi tutarlilik saglar.</p>
-
-            <h2>3. Veri Paylasimi</h2>
-            <p>Auto Everything Flow, toplanan verileri ucuncu taraflarla paylasmaz, satmaz veya kiralamaz. Yerel verileriniz cihazinizda, sync verileri ise Google hesabinizda kalir.</p>
-
-            <h2>4. Dis Hizmetler</h2>
-            <p>Pro abonelik dogrulamasi icin Polar.sh hizmeti kullanilmaktadir. Bu islem sirasinda yalnizca abonelik token bilgisi dogrulanir; kisisel verileriniz Polar.sh ile paylasilmaz.</p>
-
-            <h2>5. Izinler</h2>
-            <p>Eklenti asagidaki Chrome izinlerini kullanir:</p>
-            <p>- <strong>activeTab / scripting:</strong> Flow AI sayfasinda icerik scripti calistirmak icin</p>
-            <p>- <strong>storage:</strong> Ayarlarinizi ve verilerinizi yerel olarak saklamak icin</p>
-            <p>- <strong>downloads:</strong> Olusturulan gorselleri bilgisayariniza indirmek icin</p>
-            <p>- <strong>notifications:</strong> Indirme tamamlandiginda sizi bilgilendirmek icin</p>
-            <p>- <strong>alarms:</strong> Arka plan servisinin duzgun calismasini saglamak icin</p>
-            <p>- <strong>sidePanel / tabs:</strong> Yan panel arayuzunu acmak ve Flow AI sekmesini bulmak icin</p>
-
-            <h2>6. Veri Guvenligi</h2>
-            <p>Yerel veriler Chrome'un yerlesik storage API'si araciligiyla cihazinizda saklanir. Sync verileri Google'in guvenli altyapisi uzerinden iletilir. Eklenti kendi sunucularina hicbir veri gondermez.</p>
-
-            <h2>7. Kullanici Haklari</h2>
-            <p>Eklentiyi kaldirdiginizda yerel veriler (Chrome local storage) otomatik olarak silinir. Ancak Chrome sync storage'da saklanan gunluk kullanim verisi Google hesabinizda kalmaya devam edebilir. Ayrica eklenti ayarlarindan istediginiz zaman verilerinizi sifirlayabilirsiniz.</p>
-
-            <h2>8. Degisiklikler</h2>
-            <p>Bu gizlilik politikasi guncellenebilir. Onemli degisiklikler eklenti guncellemesi ile birlikte bildirilecektir.</p>
-
-            <h2>9. Iletisim</h2>
-            <p>Sorulariniz icin: <strong>kayisciahmethan@gmail.com</strong></p>
-        </div>
-
-        <!-- ENGLISH -->
-        <div id="en" class="section">
-            <h1>Auto Everything Flow &mdash; Privacy Policy</h1>
-            <p class="subtitle">Last updated: March 2026</p>
-
-            <h2>1. Overview</h2>
-            <p>Auto Everything Flow is a Chrome extension that facilitates prompt generation and image downloading on Google Flow AI (labs.google). We value user privacy and this policy explains how your data is handled.</p>
-
-            <h2>2. Data Collected</h2>
-            <div class="highlight">
-                <p>Auto Everything Flow does not send any personal data to its own servers.</p>
-            </div>
-            <p>The extension stores the following data locally on your device (Chrome local storage):</p>
-            <p>- User-entered prompt lists and character names</p>
-            <p>- Extension settings (language, speed, mode preferences)</p>
-            <p>- Total download and session statistics</p>
-            <p>- Subscription status (Pro/Free)</p>
-            <p>Additionally, daily usage counters (generation and download limits) are synced via Chrome sync storage through your Google account. This data is stored on Google's infrastructure to ensure consistency across devices.</p>
-
-            <h2>3. Data Sharing</h2>
-            <p>Auto Everything Flow does not share, sell, or rent collected data with third parties. Local data remains on your device, and synced data remains in your Google account.</p>
-
-            <h2>4. External Services</h2>
-            <p>Polar.sh is used for Pro subscription verification. During this process, only the subscription token is verified; your personal data is not shared with Polar.sh.</p>
-
-            <h2>5. Permissions</h2>
-            <p>The extension uses the following Chrome permissions:</p>
-            <p>- <strong>activeTab / scripting:</strong> To run content scripts on the Flow AI page</p>
-            <p>- <strong>storage:</strong> To store your settings and data locally</p>
-            <p>- <strong>downloads:</strong> To download generated images to your computer</p>
-            <p>- <strong>notifications:</strong> To notify you when downloads are complete</p>
-            <p>- <strong>alarms:</strong> To ensure proper background service operation</p>
-            <p>- <strong>sidePanel / tabs:</strong> To open the side panel UI and find the Flow AI tab</p>
-
-            <h2>6. Data Security</h2>
-            <p>Local data is stored on your device using Chrome's built-in storage API. Synced data is transmitted securely through Google's infrastructure. The extension does not operate its own servers.</p>
-
-            <h2>7. User Rights</h2>
-            <p>When you uninstall the extension, local data (Chrome local storage) is automatically deleted. However, daily usage data stored in Chrome sync storage may remain in your Google account. You can also reset your data at any time from the extension settings.</p>
-
-            <h2>8. Changes</h2>
-            <p>This privacy policy may be updated. Significant changes will be communicated through extension updates.</p>
-
-            <h2>9. Contact</h2>
-            <p>For questions: <strong>kayisciahmethan@gmail.com</strong></p>
-        </div>
-
-        <footer>
-            Auto Everything Flow &copy; 2026 &mdash; Ahmethan Kayisci
-        </footer>
+  <div class="hero">
+    <div class="hero-icon">&#x26A1;</div>
+    <h1>Auto Everything Flow</h1>
+    <p class="subtitle">Automate image generation and bulk downloading on Google Flow AI. Save hours of repetitive work with batch prompts and smart scanning.</p>
+    <div class="hero-badges"><span class="hero-badge">Chrome Extension</span><span class="hero-badge">Google Flow AI</span><span class="hero-badge">Batch Automation</span></div>
+    <div class="cta-group"><a href="#pricing" class="btn btn-primary">Get Started</a><a href="#features" class="btn btn-outline">See Features</a></div>
+  </div>
+  <section>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Three simple steps to automate your entire workflow on Google Flow AI.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Enter Your Prompts</h3><p>Paste a list of text prompts into the extension sidebar. One prompt per line.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Auto Generate</h3><p>Click start and the extension automatically submits each prompt to Flow AI with smart wait times.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Bulk Download</h3><p>Scan for generated images and download them all at once into organized folders.</p></div>
     </div>
-
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById(lang).classList.add('active');
-        }
-    </script>
+  </section>
+  <section id="features">
+    <h2 class="section-title">Powerful Features</h2>
+    <p class="section-sub">Everything you need to supercharge your AI image workflow.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">&#x1F680;</div><h3>Batch Prompt Generation</h3><p>Submit hundreds of prompts automatically. Set custom wait times between generations for optimal results.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F50D;</div><h3>Smart Image Scanner</h3><p>Intelligent scanning detects generated images across your Flow AI workspace. Never miss a download.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F4E5;</div><h3>One-Click Bulk Download</h3><p>Download all found images at once into custom-named folders. Organized and ready to use.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F3AD;</div><h3>Character Persistence</h3><p>Keep a consistent character asset across all your generations. Perfect for creating series and collections.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F30D;</div><h3>Multi-Language Support</h3><p>Full support for English and Turkish. The interface adapts to your preferred language seamlessly.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F3A8;</div><h3>Light &amp; Dark Themes</h3><p>Choose between light and dark modes for comfortable use at any time of day.</p></div>
+    </div>
+  </section>
+  <section id="pricing">
+    <h2 class="section-title">Simple Pricing</h2>
+    <p class="section-sub">Start free, upgrade when you need more power.</p>
+    <div class="pricing-grid">
+      <div class="price-card"><h3>Free</h3><div class="price-amount">$0</div><div class="price-period">forever</div><ul class="price-features"><li>10 daily generations</li><li>10 daily downloads</li><li>Batch prompt input</li><li>Smart image scanning</li><li>Folder organization</li></ul><a href="#" class="price-btn free">Install Free</a></div>
+      <div class="price-card pro"><h3>Pro</h3><div class="price-amount">$3.99 <span>/ mo</span></div><div class="price-period">billed monthly</div><ul class="price-features"><li>Unlimited generations</li><li>Unlimited downloads</li><li>Batch prompt input</li><li>Smart image scanning</li><li>Folder organization</li><li>Character persistence</li><li>Priority support</li></ul><a href="https://buy.polar.sh/polar_cl_rScuQ49eQgyyMZTk4eWQhupa9TqTqFOL72lPe0YWX23" class="price-btn pro">Upgrade to Pro</a></div>
+    </div>
+  </section>
+  <footer>
+    <p>Auto Everything Flow — Built for creators who use Google Flow AI</p>
+    <p style="margin-top:8px;"><a href="privacy-policy.html">Privacy Policy</a></p>
+    <p style="margin-top:12px;">&copy; 2025 Auto Everything Flow. All rights reserved.</p>
+  </footer>
 </body>
 </html>
