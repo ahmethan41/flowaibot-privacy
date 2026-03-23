@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Auto Everything Flow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a10;
+            color: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 40px; padding-bottom: 20px;
+            border-bottom: 1px solid rgba(158, 89, 226, 0.2);
+        }
+        .back-link {
+            color: #a78bfa; text-decoration: none; font-size: 14px;
+            display: flex; align-items: center; gap: 5px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #7c3aed; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
+        .logo {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, #7c3aed, #a78bfa);
+            border-radius: 12px; display: flex; align-items: center;
+            justify-content: center; font-size: 28px; font-weight: bold; color: white;
+        }
+        .logo-text h1 { font-size: 24px; font-weight: 700; color: #e2e8f0; }
+        .logo-text p { font-size: 12px; color: #a78bfa; margin-top: 2px; }
+        .lang-switcher { display: flex; gap: 10px; }
+        .lang-btn {
+            padding: 8px 16px; border: 2px solid #7c3aed; background: transparent;
+            color: #a78bfa; border-radius: 6px; cursor: pointer; font-size: 14px;
+            font-weight: 500; transition: all 0.3s;
+        }
+        .lang-btn.active { background: #7c3aed; color: white; }
+        .lang-btn:hover:not(.active) { color: #7c3aed; }
+        .content { margin-bottom: 60px; }
+        .section { margin-bottom: 40px; }
+        .section h2 {
+            font-size: 22px; font-weight: 700; color: #a78bfa;
+            margin-bottom: 15px; padding-bottom: 10px;
+            border-bottom: 2px solid rgba(158, 89, 226, 0.2);
+        }
+        .section h3 { font-size: 16px; font-weight: 600; color: #a78bfa; margin-top: 20px; margin-bottom: 10px; }
+        .section p { margin-bottom: 12px; color: #cbd5e1; font-size: 15px; }
+        .section ul { list-style: none; margin: 15px 0; padding-left: 20px; }
+        .section li {
+            margin-bottom: 10px; padding-left: 20px; position: relative;
+            color: #cbd5e1; font-size: 15px;
+        }
+        .section li:before { content: "▸"; color: #7c3aed; position: absolute; left: 0; font-weight: bold; }
+        .callout {
+            background: rgba(158, 89, 226, 0.1); border-left: 4px solid #7c3aed;
+            padding: 15px 20px; margin: 20px 0; border-radius: 4px; color: #cbd5e1;
+        }
+        .hidden { display: none; }
+        .footer {
+            text-align: center; padding: 30px 0; margin-top: 40px;
+            border-top: 1px solid rgba(158, 89, 226, 0.2); color: #64748b; font-size: 14px;
+        }
+        .update-date { margin-top: 10px; font-size: 12px; color: #475569; }
+        a { color: #a78bfa; }
+        a:hover { color: #7c3aed; }
+        strong { color: #e2e8f0; }
+        @media (max-width: 600px) {
+            .header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .section h2 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <div class="logo-section">
+                <div class="logo">F</div>
+                <div class="logo-text">
+                    <h1>Auto Everything Flow</h1>
+                    <p>Chrome Extension</p>
+                </div>
+            </div>
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
+                <button class="lang-btn" onclick="switchLanguage('tr')">Türkçe</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- ENGLISH CONTENT -->
+            <div id="content-en">
+                <div class="section">
+                    <h2>Terms of Service</h2>
+                    <p><strong>Effective Date: March 2026</strong></p>
+                    <p>Welcome to Auto Everything Flow. These Terms of Service govern your use of the Auto Everything Flow Chrome extension ("Extension"). Please read these terms carefully before installing or using the Extension.</p>
+                </div>
+
+                <div class="section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By installing, accessing, or using the Auto Everything Flow Chrome extension, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, you may not install or use the Extension. Your continued use of the Extension following the posting of revised Terms of Service means that you accept and agree to the changes.</p>
+                </div>
+
+                <div class="section">
+                    <h2>2. Description of Service</h2>
+                    <p>Auto Everything Flow is a Chrome extension designed to enhance your experience with Google Flow AI. The Extension provides the following features:</p>
+                    <ul>
+                        <li>Automated image generation using prompts</li>
+                        <li>Batch prompt processing for multiple image generation tasks</li>
+                        <li>Bulk downloading of generated images</li>
+                        <li>Automated folder organization and management</li>
+                        <li>Streamlined workflow automation for repetitive tasks</li>
+                    </ul>
+                    <p>The Extension is designed to automate legitimate workflows within Google Flow AI and is not affiliated with, endorsed by, or officially associated with Google or Google Flow AI.</p>
+                </div>
+
+                <div class="section">
+                    <h2>3. User Accounts</h2>
+                    <p>To use the Extension, you must create and maintain an account using our authentication system powered by Supabase. Account registration options include:</p>
+                    <ul>
+                        <li>Google OAuth authentication</li>
+                        <li>Email and One-Time Password (OTP) authentication</li>
+                    </ul>
+                    <p>You are solely responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use of your account. You agree to provide accurate and complete information during registration and to keep your account information current. One account per user is permitted; creating multiple accounts is prohibited.</p>
+                </div>
+
+                <div class="section">
+                    <h2>4. Free and Pro Plans</h2>
+                    <p>Auto Everything Flow offers both Free and Pro subscription tiers:</p>
+                    <h3>Free Plan</h3>
+                    <ul>
+                        <li>Access to core automation features</li>
+                        <li>Daily usage limits on image generation and batch processing</li>
+                        <li>Standard folder organization capabilities</li>
+                        <li>Community support via email</li>
+                    </ul>
+                    <h3>Pro Plan</h3>
+                    <ul>
+                        <li>Unlimited daily usage limits</li>
+                        <li>Advanced batch processing capabilities</li>
+                        <li>Priority email support</li>
+                        <li>Advanced folder automation features</li>
+                        <li>Early access to new features</li>
+                    </ul>
+                    <p>Pro plan subscriptions are managed through Polar.sh. By subscribing to the Pro plan, you authorize Polar.sh to charge your payment method on a recurring basis according to your chosen billing cycle.</p>
+                </div>
+
+                <div class="section">
+                    <h2>5. Acceptable Use</h2>
+                    <p>You agree to use the Extension only for lawful purposes and in a way that does not infringe upon the rights of others or restrict their use and enjoyment of the Extension. Prohibited behavior includes:</p>
+                    <ul>
+                        <li>Harassing or causing distress or inconvenience to any person</li>
+                        <li>Transmitting obscene or offensive content</li>
+                        <li>Disrupting the normal flow of dialogue within the Extension</li>
+                        <li>Attempting to use the Extension for purposes beyond its intended automation scope</li>
+                        <li>Reverse engineering, decompiling, or attempting to derive the source code of the Extension</li>
+                        <li>Bypassing or circumventing usage limits and restrictions</li>
+                        <li>Using the Extension to violate Google Flow AI's Terms of Service</li>
+                        <li>Automated abuse or excessive requests that overload Extension systems</li>
+                    </ul>
+                    <p>Violation of acceptable use policies may result in account suspension or termination without refund.</p>
+                </div>
+
+                <div class="section">
+                    <h2>6. Intellectual Property Rights</h2>
+                    <p>The Extension, including its code, design, functionality, and features, is owned by Ahmethan Kayisci and protected by copyright and other intellectual property laws. You are granted a limited, non-exclusive, non-transferable license to use the Extension in accordance with these terms.</p>
+                    <p>You retain all rights to content you generate or create using the Extension, including images generated through Google Flow AI. However, you grant us a non-exclusive, royalty-free license to use any feedback, suggestions, or improvements you provide regarding the Extension.</p>
+                </div>
+
+                <div class="section">
+                    <h2>7. Third-Party Services</h2>
+                    <p>The Extension integrates with and relies upon the following third-party services:</p>
+                    <h3>Google Flow AI</h3>
+                    <p>The Extension automates interactions with Google Flow AI. Auto Everything Flow is not affiliated with, endorsed by, or officially associated with Google or Google Flow AI. Use of Google Flow AI is subject to Google's Terms of Service.</p>
+                    <h3>Supabase</h3>
+                    <p>We use Supabase for user authentication and data storage. Your authentication data and account information are processed according to Supabase's privacy policies.</p>
+                    <h3>Polar.sh</h3>
+                    <p>Pro plan payments are processed through Polar.sh. Payment processing is subject to Polar.sh's terms and privacy policies. We do not store your payment information directly.</p>
+                    <h3>Google OAuth</h3>
+                    <p>We offer Google OAuth for account authentication. Your use of Google OAuth is subject to Google's terms and privacy policies.</p>
+                    <p>We are not responsible for the availability, functionality, or changes made to these third-party services. Changes to these services may affect Extension functionality.</p>
+                </div>
+
+                <div class="section">
+                    <h2>8. Payments and Subscriptions</h2>
+                    <p><strong>Pro Plan Billing:</strong> Pro plan subscriptions are billed through Polar.sh on a recurring monthly or annual basis (depending on your chosen plan). You authorize Polar.sh to charge your payment method for the subscription fee plus any applicable taxes.</p>
+                    <p><strong>Subscription Management:</strong> You may cancel your Pro plan subscription at any time through your account settings or by contacting Polar.sh directly. Cancellation takes effect at the end of your current billing cycle.</p>
+                    <p><strong>Refund Policy:</strong> We do not offer refunds for partial billing periods. If you cancel mid-cycle, you will retain access to Pro features through the end of your paid billing period.</p>
+                    <p><strong>Price Changes:</strong> We reserve the right to change subscription prices with at least 30 days' notice. Price increases will take effect at your next billing date.</p>
+                </div>
+
+                <div class="section">
+                    <h2>9. Disclaimer of Warranties</h2>
+                    <p>The Extension is provided on an "AS IS" and "AS AVAILABLE" basis. We make no warranties, express or implied, regarding the Extension or its fitness for any particular purpose. Specifically:</p>
+                    <ul>
+                        <li>We do not warrant that the Extension will be uninterrupted, error-free, or secure</li>
+                        <li>We do not warrant that the Extension will always be available or accessible</li>
+                        <li>We do not warrant the accuracy or reliability of content generated using the Extension</li>
+                        <li>We do not guarantee compatibility with all Chrome versions or operating systems</li>
+                    </ul>
+                    <p>To the fullest extent permitted by law, we disclaim all warranties, whether express, implied, or statutory.</p>
+                </div>
+
+                <div class="section">
+                    <h2>10. Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by applicable law, Ahmethan Kayisci and Auto Everything Flow shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or use, whether or not we have been advised of the possibility of such damages.</p>
+                    <p>Our total liability for any claim arising from or relating to the Extension shall not exceed the amount you have paid to us in the past 12 months, or $100, whichever is greater.</p>
+                    <p>We are not liable for:</p>
+                    <ul>
+                        <li>Changes, modifications, or discontinuation of Google Flow AI or its services</li>
+                        <li>Loss of data or images due to technical failures</li>
+                        <li>Unauthorized access to your account</li>
+                        <li>Any issues arising from your use of third-party services</li>
+                        <li>Actions taken by other users of the Extension</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>11. Changes to Terms</h2>
+                    <p>We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to the Extension or our website. We will notify users of material changes via email or through the Extension. Your continued use of the Extension following such notification constitutes your acceptance of the updated terms.</p>
+                </div>
+
+                <div class="section">
+                    <h2>12. Contact Information</h2>
+                    <p>If you have questions about these Terms of Service, concerns about your account, or wish to report violations, please contact us:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:kayisciahmethan@gmail.com">kayisciahmethan@gmail.com</a></li>
+                    </ul>
+                    <p>We will endeavor to respond to inquiries within 7 business days.</p>
+                </div>
+
+                <div class="callout">
+                    <strong>Note:</strong> These Terms of Service are governed by and construed in accordance with the laws of the jurisdiction in which the developer resides, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
+                </div>
+            </div>
+
+            <!-- TURKISH CONTENT -->
+            <div id="content-tr" class="hidden">
+                <div class="section">
+                    <h2>Kullanım Koşulları</h2>
+                    <p><strong>Yürürlülük Tarihi: Mart 2026</strong></p>
+                    <p>Auto Everything Flow'a hoş geldiniz. Bu Kullanım Koşulları, Auto Everything Flow Chrome uzantısının ("Uzantı") kullanımını yönetir. Lütfen Uzantıyı yüklemeden veya kullanmadan önce bu şartları dikkatle okuyunuz.</p>
+                </div>
+
+                <div class="section">
+                    <h2>1. Şartların Kabulü</h2>
+                    <p>Auto Everything Flow Chrome uzantısını yükleyerek, erişerek veya kullanarak, bu Kullanım Koşullarını okuduğunuzu, anladığınızı ve kabul ettiğinizi teyit edersiniz. Bu şartları kabul etmiyorsanız, Uzantıyı yükleyemez veya kullanamaz. Revize edilmiş Kullanım Koşullarının yayınlanmasından sonra Uzantıyı kullanmaya devam etmeniz, değişiklikleri kabul ve onay ettiğiniz anlamına gelir.</p>
+                </div>
+
+                <div class="section">
+                    <h2>2. Hizmetin Tanımı</h2>
+                    <p>Auto Everything Flow, Google Flow AI ile çalışma deneyiminizi geliştirmek için tasarlanmış bir Chrome uzantısıdır. Uzantı aşağıdaki özellikleri sağlar:</p>
+                    <ul>
+                        <li>İstemler kullanarak otomatik görüntü oluşturma</li>
+                        <li>Birden fazla görüntü oluşturma görevleri için toplu istem işleme</li>
+                        <li>Oluşturulan görüntülerin toplu indirilmesi</li>
+                        <li>Otomatik klasör organizasyonu ve yönetimi</li>
+                        <li>Tekrarlayan görevler için basitleştirilmiş iş akışı otomasyonu</li>
+                    </ul>
+                    <p>Uzantı, Google Flow AI içinde yasal iş akışlarını otomatikleştirmek için tasarlanmıştır ve Google veya Google Flow AI'ye bağlı değildir, onay almış değildir veya resmi olarak ilişkili değildir.</p>
+                </div>
+
+                <div class="section">
+                    <h2>3. Kullanıcı Hesapları</h2>
+                    <p>Uzantıyı kullanmak için, Supabase tarafından sağlanan kimlik doğrulama sistemimizi kullanarak bir hesap oluşturmanız ve korumanız gerekir. Hesap kaydı seçenekleri şunları içerir:</p>
+                    <ul>
+                        <li>Google OAuth kimlik doğrulaması</li>
+                        <li>E-posta ve Tek Seferlik Şifre (OTP) kimlik doğrulaması</li>
+                    </ul>
+                    <p>Hesap kimlik bilgilerinizin gizliliğini korumaktan ve hesabınız altında gerçekleşen tüm faaliyetlerden siz sorumlusunuz. Hesabınızın yetkisiz kullanımından haberdar olur olmaz bizi derhal bilgilendireceksiniz. Kayıt sırasında doğru ve eksiksiz bilgi sağlamayı ve hesap bilgilerinizi güncel tutmayı kabul edersiniz. Kullanıcı başına bir hesap izin verilir; birden fazla hesap oluşturmak yasaktır.</p>
+                </div>
+
+                <div class="section">
+                    <h2>4. Ücretsiz ve Pro Planları</h2>
+                    <p>Auto Everything Flow, Ücretsiz ve Pro abonelik seviyeleri sunmaktadır:</p>
+                    <h3>Ücretsiz Plan</h3>
+                    <ul>
+                        <li>Temel otomasyon özelliklerine erişim</li>
+                        <li>Görüntü oluşturma ve toplu işlemde günlük kullanım limitleri</li>
+                        <li>Standart klasör organizasyonu yetenekleri</li>
+                        <li>E-posta aracılığıyla topluluk desteği</li>
+                    </ul>
+                    <h3>Pro Plan</h3>
+                    <ul>
+                        <li>Sınırsız günlük kullanım limitleri</li>
+                        <li>Gelişmiş toplu işlem yetenekleri</li>
+                        <li>Öncelikli e-posta desteği</li>
+                        <li>Gelişmiş klasör otomasyon özellikleri</li>
+                        <li>Yeni özelliklere erken erişim</li>
+                    </ul>
+                    <p>Pro plan abonelikleri Polar.sh aracılığıyla yönetilir. Pro planına abone olarak, Polar.sh'nin seçtiğiniz faturalandırma dönemine göre ödeme yönteminizi düzenli olarak kullanmasına izin verirsiniz.</p>
+                </div>
+
+                <div class="section">
+                    <h2>5. Kabul Edilebilir Kullanım</h2>
+                    <p>Uzantıyı yalnızca yasal amaçlar için ve başkalarının haklarını ihlal etmeyen veya onların Uzantı kullanım ve zevkini kısıtlamayan bir şekilde kullanacağınızı kabul edersiniz. Yasak davranışlar şunları içerir:</p>
+                    <ul>
+                        <li>Herhangi bir kişiyi taciz etmek veya sıkıntı ya da zorluk yaşatmak</li>
+                        <li>Müstehcen veya hakaret verici içerik göndermek</li>
+                        <li>Uzantı içindeki normal diyalog akışını bozurmak</li>
+                        <li>Uzantıyı amaçlanan otomasyon kapsamının ötesinde kullanmaya çalışmak</li>
+                        <li>Uzantının ters mühendisliğini yapmak, derlemesini açmak veya kaynak kodunu çıkarmaya çalışmak</li>
+                        <li>Kullanım limitleri ve kısıtlamalarını aşmaya veya devre dışı bırakmaya çalışmak</li>
+                        <li>Uzantıyı Google Flow AI'nin Kullanım Koşullarını ihlal etmek için kullanmak</li>
+                        <li>Uzantı sistemlerini aşırı yükleyen otomatik kötüye kullanım veya aşırı istekler</li>
+                    </ul>
+                    <p>Kabul edilebilir kullanım politikalarının ihlali, iade olmaksızın hesap askıya alınması veya sonlandırılmasına neden olabilir.</p>
+                </div>
+
+                <div class="section">
+                    <h2>6. Fikri Mülkiyet Hakları</h2>
+                    <p>Uzantı, kodu, tasarımı, işlevi ve özellikleri dahil olmak üzere, Ahmethan Kayisci'ye aittir ve telif hakkı ve diğer fikri mülkiyet yasalarıyla korunmaktadır. Size, Uzantıyı bu şartlara uygun olarak kullanmak için sınırlı, münhasır olmayan, devredilemez bir lisans verilmektedir.</p>
+                    <p>Uzantıyı kullanarak oluşturduğunuz veya yarattığınız içeriğin (Google Flow AI aracılığıyla oluşturulan görüntüler dahil) tüm haklarını saklı tutarsınız. Ancak, Uzantı hakkında sağladığınız herhangi bir geri bildirim, öneri veya iyileştirme için bize münhasır olmayan, telif hakkı ödemesiz bir lisans vermektesiniz.</p>
+                </div>
+
+                <div class="section">
+                    <h2>7. Üçüncü Taraf Hizmetleri</h2>
+                    <p>Uzantı, aşağıdaki üçüncü taraf hizmetleriyle entegre olur ve bunlara dayanır:</p>
+                    <h3>Google Flow AI</h3>
+                    <p>Uzantı, Google Flow AI ile etkileşimleri otomatikleştirir. Auto Everything Flow, Google veya Google Flow AI'ye bağlı değildir, onay almış değildir veya resmi olarak ilişkili değildir. Google Flow AI'nin kullanımı, Google'ın Kullanım Koşullarına tabi olur.</p>
+                    <h3>Supabase</h3>
+                    <p>Kullanıcı kimlik doğrulaması ve veri depolaması için Supabase kullanıyoruz. Kimlik doğrulama verileriniz ve hesap bilgileriniz, Supabase'in gizlilik politikalarına göre işlenir.</p>
+                    <h3>Polar.sh</h3>
+                    <p>Pro plan ödemeleri Polar.sh aracılığıyla işlenir. Ödeme işleme, Polar.sh'nin şartlarına ve gizlilik politikalarına tabi olur. Ödeme bilgilerinizi doğrudan saklamıyoruz.</p>
+                    <h3>Google OAuth</h3>
+                    <p>Hesap kimlik doğrulaması için Google OAuth sunuyoruz. Google OAuth'u kullanımınız, Google'ın şartlarına ve gizlilik politikalarına tabidir.</p>
+                    <p>Bu üçüncü taraf hizmetlerinin kullanılabilirliği, işlevi veya yapılan değişikliklerden sorumlu değiliz. Bu hizmetlerde yapılan değişiklikler Uzantı işlevselliğini etkileyebilir.</p>
+                </div>
+
+                <div class="section">
+                    <h2>8. Ödemeler ve Abonelikler</h2>
+                    <p><strong>Pro Plan Faturalaması:</strong> Pro plan abonelikleri, seçtiğiniz plana göre Polar.sh aracılığıyla aylık veya yıllık olarak faturalandırılır. Polar.sh'nin abonelik ücretiniz artı geçerli vergileriniz için ödeme yönteminizi kullanmasına izin verirsiniz.</p>
+                    <p><strong>Abonelik Yönetimi:</strong> Pro plan aboneliğinizi istediğiniz zaman hesap ayarlarınız aracılığıyla veya Polar.sh ile doğrudan iletişime geçerek iptal edebilirsiniz. İptal, mevcut faturalandırma döneminin sonunda yürürlüğe girer.</p>
+                    <p><strong>İade Politikası:</strong> Kısmi faturalandırma dönemleri için iade sunmuyoruz. Dönem ortasında iptal ederseniz, ödenen faturalandırma döneminin sonuna kadar Pro özelliklerine erişimi koruursunuz.</p>
+                    <p><strong>Fiyat Değişiklikleri:</strong> Abonelik fiyatlarını en az 30 gün önceden haber vererek değiştirme hakkını saklı tutarız. Fiyat artışları bir sonraki faturalandırma tarihinizde yürürlüğe girecektir.</p>
+                </div>
+
+                <div class="section">
+                    <h2>9. Garanti Reddedilmesi</h2>
+                    <p>Uzantı "OLDUĞU GİBİ" ve "MEVCUT DURUMDA" temeli üzerine sağlanır. Uzantı hakkında veya herhangi bir özel amaç için uygunluğu hakkında açık veya zımni hiçbir garanti vermiyoruz. Özellikle:</p>
+                    <ul>
+                        <li>Uzantının kesintisiz, hatasız veya güvenli olacağını garanti etmiyoruz</li>
+                        <li>Uzantının her zaman kullanılabilir veya erişilebilir olacağını garanti etmiyoruz</li>
+                        <li>Uzantı kullanılarak oluşturulan içeriğin doğruluğu veya güvenilirliğini garanti etmiyoruz</li>
+                        <li>Tüm Chrome sürümleri veya işletim sistemleriyle uyumluluğu garanti etmiyoruz</li>
+                    </ul>
+                    <p>Yasa tarafından izin verilen maksimum ölçüde, tüm garantileri, ister açık, zımni veya yasal olsun, reddediyoruz.</p>
+                </div>
+
+                <div class="section">
+                    <h2>10. Sorumluluk Sınırlaması</h2>
+                    <p>Geçerli yasaların izin verdiği maksimum ölçüde, Ahmethan Kayisci ve Auto Everything Flow, kar kaybı, veri kaybı veya kullanım kaybı dahil olmak üzere, bize bu tür zararların mümkün olabileceğinden haberdar olunup olunmadığına bakılmaksızın, Uzantıdan kaynaklanan veya ilişkili herhangi bir iddiadan kaynaklanan dolaylı, tesadüfi, özel, sonuç veya cezai zararlardan sorumlu değildir.</p>
+                    <p>Uzantıdan kaynaklanan veya ilişkili herhangi bir iddiaya yönelik toplam sorumluluk, geçtiğimiz 12 ay içinde bize ödediğiniz tutarı veya 100 doları (hangisi daha büyükse) aşmayacaktır.</p>
+                    <p>Aşağıdakilerden sorumlu değiliz:</p>
+                    <ul>
+                        <li>Google Flow AI veya hizmetlerinde yapılan değişiklikler, değiştirilmeler veya devre dışı bırakılmalar</li>
+                        <li>Teknik arızalardan kaynaklanan veri veya görüntü kaybı</li>
+                        <li>Hesabınıza yetkisiz erişim</li>
+                        <li>Üçüncü taraf hizmetlerini kullanımından kaynaklanan sorunlar</li>
+                        <li>Uzantının diğer kullanıcıları tarafından alınan eylemler</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>11. Şartlara Yapılan Değişiklikler</h2>
+                    <p>Bu Kullanım Koşullarını istediğimiz zaman değiştirme hakkını saklı tutarız. Değişiklikler, Uzantıya veya web sitemize gönderildikten hemen sonra yürürlüğe girer. Önemli değişiklikler hakkında kullanıcıları e-posta yoluyla veya Uzantı aracılığıyla bilgilendireceğiz. Bu tür bildirimden sonra Uzantıyı kullanmaya devam etmeniz, güncellenmiş şartları kabul ettiğiniz anlamına gelir.</p>
+                </div>
+
+                <div class="section">
+                    <h2>12. İletişim Bilgileri</h2>
+                    <p>Bu Kullanım Koşulları hakkında sorularınız, hesabınız hakkında endişeleriniz veya ihlalleri raporlamak istiyorsanız, lütfen bizimle iletişime geçin:</p>
+                    <ul>
+                        <li><strong>E-posta:</strong> <a href="mailto:kayisciahmethan@gmail.com">kayisciahmethan@gmail.com</a></li>
+                    </ul>
+                    <p>Sorulara 7 iş günü içinde yanıt vermeyi hedefliyoruz.</p>
+                </div>
+
+                <div class="callout">
+                    <strong>Not:</strong> Bu Kullanım Koşulları, geliştiricinin ikamet ettiği yargı yetkisinin yasalarına göre yönetilir ve yorumlanır ve münhasır olarak o yerdeki mahkemelerin yargı yetkisine irrevocably uyarsınız.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Auto Everything Flow © 2026 — Ahmethan Kayisci
+            <div class="update-date">Last updated: March 2026</div>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Show/hide content
+            document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+            document.getElementById('content-tr').classList.toggle('hidden', lang !== 'tr');
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
